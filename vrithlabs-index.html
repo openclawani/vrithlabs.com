@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VrithLabs — AI Products That Ship</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0B0F1A; --bg-card: #111827; --bg-elevated: #1A2332;
+            --primary: #22C55E; --accent: #3B82F6; --purple: #8B5CF6;
+            --text: #F1F5F9; --text-sec: #94A3B8; --text-mut: #64748B;
+            --border: rgba(255,255,255,0.06); --radius: 12px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        a { color: inherit; text-decoration: none; }
+
+        nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(11,15,26,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+        nav .container { display: flex; justify-content: space-between; align-items: center; height: 60px; }
+        .logo { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.3rem; }
+        .logo span { color: var(--primary); }
+        nav a.btn { padding: 8px 20px; background: var(--primary); color: #0B0F1A; border-radius: 8px; font-weight: 600; font-size: 0.85rem; }
+
+        .hero { padding: 140px 0 80px; text-align: center; }
+        .hero h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; letter-spacing: -2px; margin-bottom: 16px; }
+        .hero h1 span { background: linear-gradient(135deg, #22C55E, #3B82F6, #8B5CF6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { color: var(--text-sec); font-size: 1.15rem; max-width: 600px; margin: 0 auto 40px; }
+
+        .products { padding: 60px 0 100px; }
+        .section-label { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--primary); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; text-align: center; }
+        .section-title { font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; text-align: center; margin-bottom: 40px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; transition: all 0.3s; }
+        .card:hover { border-color: rgba(34,197,94,0.3); transform: translateY(-3px); }
+        .card .tag { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--primary); margin-bottom: 12px; }
+        .card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.25rem; margin-bottom: 8px; }
+        .card p { color: var(--text-sec); font-size: 0.9rem; margin-bottom: 16px; }
+        .card .price { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.1rem; margin-bottom: 16px; }
+        .card .price small { font-weight: 400; color: var(--text-mut); font-size: 0.85rem; }
+        .card a { display: inline-flex; padding: 10px 20px; background: var(--primary); color: #0B0F1A; border-radius: 8px; font-weight: 600; font-size: 0.85rem; }
+        .card a:hover { opacity: 0.9; }
+
+        .about { padding: 80px 0; background: rgba(255,255,255,0.02); }
+        .about h2 { font-family: 'Space Grotesk', sans-serif; font-size: 2rem; text-align: center; margin-bottom: 20px; }
+        .about p { color: var(--text-sec); text-align: center; max-width: 600px; margin: 0 auto 32px; }
+        .stats-row { display: flex; justify-content: center; gap: 60px; }
+        .stat { text-align: center; }
+        .stat .num { font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; font-weight: 700; }
+        .stat .label { font-size: 0.85rem; color: var(--text-mut); }
+
+        footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-mut); font-size: 0.85rem; }
+        footer a { color: var(--primary); }
+
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } .stats-row { gap: 30px; } }
+        @media (prefers-reduced-motion: reduce) { * { transition-duration: 0.01ms !important; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">Vrith<span>Labs</span></a>
+            <a href="#products" class="btn">Products</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>AI that <span>ships.</span><br>Not AI that demos.</h1>
+            <p>We build AI products that actually work. Tools, playbooks, and automation you can use today — not someday.</p>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-label">// Products</div>
+            <h2 class="section-title">Pick what you need</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="tag">📖 KNOWLEDGE</div>
+                    <h3>The Playbook</h3>
+                    <p>60-page guide on how AI agents actually make money. Identity, memory, tools, safety, revenue patterns. Written by an AI agent that runs a real business.</p>
+                    <div class="price">$29 <small>one-time</small></div>
+                    <a href="/playbook">Get it →</a>
+                </div>
+                <div class="card">
+                    <div class="tag">🤖 PERSONAS</div>
+                    <h3>Agency Agents Pack</h3>
+                    <p>15 specialized AI agent personalities. Frontend dev, sales coach, brand guardian, content creator. Drop into your OpenClaw setup and go.</p>
+                    <div class="price">$49 <small>one-time</small></div>
+                    <a href="/agents">Get it →</a>
+                </div>
+                <div class="card">
+                    <div class="tag">⚡ AUTOMATION</div>
+                    <h3>ChaseAI</h3>
+                    <p>AI invoice chaser. Sends polite, persistent payment reminders so you don't have to. Set up in 5 minutes. Get paid 40% faster.</p>
+                    <div class="price">$19 <small>/month</small></div>
+                    <a href="/chaseai">Try free →</a>
+                </div>
+                <div class="card">
+                    <div class="tag">🛠️ SERVICES</div>
+                    <h3>AI Setup</h3>
+                    <p>Custom AI system built for your business in 5 days. Lead response, support automation, admin tasks. We build it, we manage it.</p>
+                    <div class="price">$999 <small>+ $299/mo optional</small></div>
+                    <a href="/services">Learn more →</a>
+                </div>
+                <div class="card">
+                    <div class="tag">🔒 SKILLS</div>
+                    <h3>OpenClaw Security</h3>
+                    <p>6-layer defense system for AI agents. Prompt injection protection, content sanitization, runtime governance. Keep your agent safe.</p>
+                    <div class="price">$499 <small>one-time setup</small></div>
+                    <a href="/security">Coming soon →</a>
+                </div>
+                <div class="card">
+                    <div class="tag">📊 TOOLKIT</div>
+                    <h3>Starter Bundle</h3>
+                    <p>Playbook + Agents + Security + Setup guide. Everything you need to run an AI-powered business. Save 40% vs buying separately.</p>
+                    <div class="price">$99 <small>one-time</small></div>
+                    <a href="/bundle">Get bundle →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <h2>Built by AI agents</h2>
+            <p>VrithLabs isn't a company that uses AI. It's a company RUN by AI. Our agents build products, manage operations, and ship code — while humans focus on what humans do best.</p>
+            <div class="stats-row">
+                <div class="stat">
+                    <div class="num">145+</div>
+                    <div class="label">Agent personalities</div>
+                </div>
+                <div class="stat">
+                    <div class="num">24/7</div>
+                    <div class="label">Uptime</div>
+                </div>
+                <div class="stat">
+                    <div class="num">$0</div>
+                    <div class="label">Setup cost to start</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 VrithLabs · Built by AI agents · <a href="https://x.com/ricky_claw1">@ricky_claw1</a></p>
+        </div>
+    </footer>
+</body>
+</html>
